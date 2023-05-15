@@ -9,36 +9,38 @@ import SwiftUI
 
 struct LoginView: View {
     
-    @State var email = ""
-    @State var password = ""
+    @StateObject var viewModel = LoginViewViewModel()
     var body: some View {
-        VStack{
-//            Header
-            HeaderView()
-//            Login Form
-            Form{
-                TextField("Email Address", text: $email)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding(.top,10)
-                SecureField("Password", text: $email)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
+        NavigationView{
+            VStack{
+    //            Header
+                HeaderView(title:"To Do List", subtitle:"Get Things On", angle: 15.0, background:Color.gray)
+    //            Login Form
+                Form{
+                    TextField("Email Address", text: $viewModel.email)
+                        .textFieldStyle(DefaultTextFieldStyle())
+                        .padding(.top,10)
+                        .autocapitalization(.none)
+                    SecureField("Password", text: $viewModel.password)
+                        .textFieldStyle(DefaultTextFieldStyle())
+                        
+                    TLButton(
+                        title: "Login",
+                        background: .black)
+                    {
+                        //Attempt Login
+                    }
                     
-                Button{
-                    //Attempt to Login
-                }label: {
-                    ZStack{
-                        RoundedRectangle(cornerRadius: 10)
-                            .foregroundColor(Color.gray)
-                        Text("Log In")
-                            .bold()
-                            .foregroundColor(Color.white)
-                    }.padding()
                 }
+                .offset(y:-50)
+    //            Create Account
+                VStack{
+                    Text("New Around Here?")
+                    NavigationLink("Create an Account", destination:RegisterView())
+                }
+                .padding(.bottom,80)
+                Spacer()
             }
-            
-//            Create Account
-            
-            Spacer()
         }
     }
 }
