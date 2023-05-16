@@ -13,7 +13,7 @@ struct RegisterView: View {
     @State var password = ""
     var body: some View {
         VStack{
-            HeaderView(title:"Register", subtitle:"Get Things On", angle: -15.0, background:Color.orange)
+            HeaderView(title:"Register", subtitle:"Get Things On", angle: -15.0, background:Color("RegisterHeader"))
             Form{
                 TextField("Full Name", text: $name)
                     .textFieldStyle(DefaultTextFieldStyle())

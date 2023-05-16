@@ -16,7 +16,12 @@ struct LoginView: View {
     //            Header
                 HeaderView(title:"To Do List", subtitle:"Get Things On", angle: 15.0, background:Color.gray)
     //            Login Form
+               
                 Form{
+                    if !viewModel.errorMessage.isEmpty{
+                        Text(viewModel.errorMessage)
+                            .foregroundColor(Color.red)
+                    }
                     TextField("Email Address", text: $viewModel.email)
                         .textFieldStyle(DefaultTextFieldStyle())
                         .padding(.top,10)
@@ -29,6 +34,7 @@ struct LoginView: View {
                         background: .black)
                     {
                         //Attempt Login
+                        viewModel.login()
                     }
                     
                 }
