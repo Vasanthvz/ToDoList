@@ -133,11 +133,11 @@
 			children = (
 				76CB8CDF2A10E48A00D9D9A2 /* MainViewViewModel.swift */,
 				76CB8CE12A10E4A500D9D9A2 /* ProfileViewViewModel.swift */,
+				76CB8CEB2A10E52D00D9D9A2 /* ToDoListItemViewViewModel.swift */,
 				76CB8CE52A10E4E800D9D9A2 /* NewItemsViewViewModel.swift */,
 				76CB8CE72A10E4F500D9D9A2 /* LoginViewViewModel.swift */,
 				76CB8CE92A10E50600D9D9A2 /* RegisterViewViewModel.swift */,
 				76CB8CE32A10E4BC00D9D9A2 /* ToDoListViewViewModel.swift */,
-				76CB8CEB2A10E52D00D9D9A2 /* ToDoListItemViewViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
